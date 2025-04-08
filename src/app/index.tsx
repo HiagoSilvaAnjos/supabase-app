@@ -70,9 +70,9 @@ const styles = StyleSheet.create({
     backgroundColor: colors.light.white,
     borderTopLeftRadius: 16,
     borderTopRightRadius: 16,
-    paddingTop: 14,
-    paddingLeft: 14,
-    paddingRight: 14,
+    paddingTop: 26,
+    paddingLeft: 16,
+    paddingRight: 16,
   },
 
   label: {
