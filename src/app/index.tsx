@@ -1,0 +1,117 @@
+import colors from "@/constants/colors";
+import { Link } from "expo-router";
+import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+
+const Login = () => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.logoText}>
+          Dev<Text style={{ color: colors.light.green }}>App</Text>
+        </Text>
+        <Text style={styles.slogan}>O futuro da programação</Text>
+      </View>
+
+      <View style={styles.form}>
+        <View>
+          <Text style={styles.label}>Email</Text>
+          <TextInput style={styles.input} placeholder="digite seu email..." />
+        </View>
+
+        <View>
+          <Text style={styles.label}>Senha</Text>
+          <TextInput
+            secureTextEntry
+            style={styles.input}
+            placeholder="digite sua senha..."
+          />
+        </View>
+
+        <Pressable style={styles.button}>
+          <Text style={styles.buttonText}>Acessar</Text>
+        </Pressable>
+
+        <Link style={styles.link} href={"/(auth)/signup/page"}>
+          Ainda não possui uma conta?{" "}
+          <Text style={styles.labelLink}>Cadastre-se agora</Text>
+        </Link>
+      </View>
+    </View>
+  );
+};
+
+export default Login;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: 64,
+    backgroundColor: colors.light.zinc,
+  },
+  header: {
+    paddingLeft: 14,
+    paddingRight: 14,
+  },
+  logoText: {
+    fontSize: 30,
+    fontWeight: "bold",
+    color: colors.light.white,
+  },
+  slogan: {
+    fontSize: 34,
+    marginTop: 10,
+    marginBottom: 34,
+    color: colors.light.white,
+  },
+
+  form: {
+    flex: 1,
+    gap: 4,
+    backgroundColor: colors.light.white,
+    borderTopLeftRadius: 16,
+    borderTopRightRadius: 16,
+    paddingTop: 14,
+    paddingLeft: 14,
+    paddingRight: 14,
+  },
+
+  label: {
+    color: colors.light.zinc,
+    marginBottom: 8,
+  },
+
+  input: {
+    borderWidth: 1,
+    borderColor: colors.light.gray,
+    borderRadius: 10,
+    marginBottom: 16,
+    paddingHorizontal: 14,
+    paddingTop: 16,
+    paddingBottom: 16,
+  },
+
+  button: {
+    backgroundColor: colors.light.green,
+    paddingTop: 14,
+    paddingBottom: 14,
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+    borderRadius: 10,
+  },
+
+  buttonText: {
+    color: colors.light.white,
+    fontWeight: "bold",
+  },
+
+  link: {
+    marginTop: 16,
+    textAlign: "center",
+  },
+
+  labelLink: {
+    color: colors.light.green,
+    textDecorationLine: "underline",
+  },
+});
